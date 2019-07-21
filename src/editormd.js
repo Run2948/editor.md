@@ -3352,7 +3352,7 @@
 
     // Emoji graphics files url path
     editormd.emoji     = {
-        path  : "http://www.emoji-cheat-sheet.com/graphics/emojis/",
+        path  : "http://www.webfx.com/tools/emoji-cheat-sheet/graphics/emojis/",
         ext   : ".png"
     };
 

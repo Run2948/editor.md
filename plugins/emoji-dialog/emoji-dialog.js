@@ -139,14 +139,14 @@
 				});
 			}
 			
-			var category = ["Github emoji", "Twemoji", "Font awesome", "Editor.md logo"];
+			var category = ["Github emoji", "Twemoji", "Font awesome"];
 			var tab      = dialog.find("." + classPrefix + "tab");
 
 			if (tab.html() === "") 
 			{
 				var head = "<ul class=\"" + classPrefix + "tab-head\">";
 
-				for (var i = 0; i<4; i++) {
+				for (var i = 0; i<3; i++) {
 					var active = (i === 0) ? " class=\"active\"" : "";
 					head += "<li" + active + "><a href=\"javascript:;\">" + category[i] + "</a></li>";
 				}
@@ -157,7 +157,7 @@
 
 				var container = "<div class=\"" + classPrefix + "tab-container\">";
 
-				for (var x = 0; x < 4; x++) 
+				for (var x = 0; x < 3; x++) 
                 {
 					var display = (x === 0) ? "" : "display:none;";
 					container += "<div class=\"" + classPrefix + "tab-box\" style=\"height: 260px;overflow: hidden;overflow-y: auto;" + display + "\"></div>";
@@ -169,7 +169,7 @@
 			}
             
 			var tabBoxs = tab.find("." + classPrefix + "tab-box");
-            var emojiCategories = ["github-emoji", "twemoji", "font-awesome", logoPrefix];
+            var emojiCategories = ["github-emoji", "twemoji", "font-awesome"];
 
 			var drawTable = function() {
                 var cname = emojiCategories[emojiTabIndex];
@@ -218,11 +218,6 @@
                                 {
                                     icon = "<i class=\"fa fa-" + emoji + " fa-emoji\" title=\"" + emoji + "\"></i>";
                                     row += "<a href=\"javascript:;\" value=\":fa-" + emoji + ":\" title=\":fa-" + emoji + ":\" class=\"" + classPrefix + "emoji-btn\">" + icon + "</a>";
-                                }
-                                else if (type === "editormd-logo")
-                                {
-                                    icon = "<i class=\"" + emoji + "\" title=\"Editor.md logo (" + emoji + ")\"></i>";
-                                    row += "<a href=\"javascript:;\" value=\":" + emoji + ":\" title=\":" + emoji + ":\" style=\"width:20%;\" class=\"" + classPrefix + "emoji-btn\">" + icon + "</a>";
                                 }
                             }
                             else
